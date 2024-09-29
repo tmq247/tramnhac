@@ -132,7 +132,7 @@ async def stream(
                 photo=carbon,
                 caption=_["play_21"].format(position, link),
                 reply_markup=upl,
-            )
+                )
                 await asyncio.sleep(15)
                 await app.delete_messages(chat_id, run1.id)
     elif streamtype == "youtube":
