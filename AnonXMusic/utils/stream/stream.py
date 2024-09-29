@@ -113,6 +113,8 @@ async def stream(
                 )
                 db[chat_id][0]["mystic"] = run
                 db[chat_id][0]["markup"] = "stream"
+                await asyncio.sleep(30)
+            await app.delete_messages(chat_id, run.id)
         if count == 0:
             return
         else:
