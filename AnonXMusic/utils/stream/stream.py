@@ -113,8 +113,7 @@ async def stream(
                 )
                 db[chat_id][0]["mystic"] = run
                 db[chat_id][0]["markup"] = "stream"
-                await asyncio.sleep(30)
-                await app.delete_messages(chat_id, run.id)
+                
         if count == 0:
             return
         else:
@@ -131,7 +130,7 @@ async def stream(
                 photo=carbon,
                 caption=_["play_21"].format(position, link),
                 reply_markup=upl,
-                )
+            )
             
     elif streamtype == "youtube":
         link = result["link"]
@@ -160,13 +159,12 @@ async def stream(
             )
             position = len(db.get(chat_id)) - 1
             button = aq_markup(_, chat_id)
-            ds = await app.send_message(
+            await app.send_message(
                 chat_id=original_chat_id,
                 text=_["queue_4"].format(position, title[:27], duration_min, user_name),
                 reply_markup=InlineKeyboardMarkup(button),
             )
-            await asyncio.sleep(15)
-            await app.delete_messages(chat_id, ds.id)
+            
         else:
             if not forceplay:
                 db[chat_id] = []
@@ -204,8 +202,7 @@ async def stream(
             )
             db[chat_id][0]["mystic"] = run
             db[chat_id][0]["markup"] = "stream"
-            await asyncio.sleep(15)
-            await app.delete_messages(chat_id, run.id)
+            
     elif streamtype == "soundcloud":
         file_path = result["filepath"]
         title = result["title"]
@@ -276,13 +273,12 @@ async def stream(
             )
             position = len(db.get(chat_id)) - 1
             button = aq_markup(_, chat_id)
-            run2 = await app.send_message(
+            await app.send_message(
                 chat_id=original_chat_id,
                 text=_["queue_4"].format(position, title[:27], duration_min, user_name),
                 reply_markup=InlineKeyboardMarkup(button),
                 )
-            await asyncio.sleep(15)
-            await app.delete_messages(chat_id, run2.id)
+            
         else:
             if not forceplay:
                 db[chat_id] = []
@@ -310,8 +306,6 @@ async def stream(
             )
             db[chat_id][0]["mystic"] = run
             db[chat_id][0]["markup"] = "tg"
-            await asyncio.sleep(15)
-            await app.delete_messages(chat_id, run.id)
 
     elif streamtype == "live":
         link = result["link"]
@@ -334,13 +328,12 @@ async def stream(
             )
             position = len(db.get(chat_id)) - 1
             button = aq_markup(_, chat_id)
-            ds1 = await app.send_message(
+            await app.send_message(
                 chat_id=original_chat_id,
                 text=_["queue_4"].format(position, title[:27], duration_min, user_name),
                 reply_markup=InlineKeyboardMarkup(button),
             )
-            await asyncio.sleep(15)
-            await app.delete_messages(chat_id, ds1.id)
+            
         else:
             if not forceplay:
                 db[chat_id] = []
@@ -381,8 +374,7 @@ async def stream(
             )
             db[chat_id][0]["mystic"] = run
             db[chat_id][0]["markup"] = "tg"
-            await asyncio.sleep(15)
-            await app.delete_messages(chat_id, run.id)
+            
     elif streamtype == "index":
         link = result
         title = "ɪɴᴅᴇx ᴏʀ ᴍ3ᴜ8 ʟɪɴᴋ"
