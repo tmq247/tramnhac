@@ -126,14 +126,13 @@ async def stream(
                 car = msg
             carbon = await Carbon.generate(car, randint(100, 10000000))
             upl = close_markup(_)
-            return run1 = await app.send_photo(
+            return await app.send_photo(
                 original_chat_id,
                 photo=carbon,
                 caption=_["play_21"].format(position, link),
                 reply_markup=upl,
                 )
-                await asyncio.sleep(15)
-                await app.delete_messages(chat_id, run1.id)
+            
     elif streamtype == "youtube":
         link = result["link"]
         vidid = result["vidid"]
@@ -277,14 +276,13 @@ async def stream(
             )
             position = len(db.get(chat_id)) - 1
             button = aq_markup(_, chat_id)
-            await 
-                run2 = app.send_message(
+            run2 = await app.send_message(
                 chat_id=original_chat_id,
                 text=_["queue_4"].format(position, title[:27], duration_min, user_name),
                 reply_markup=InlineKeyboardMarkup(button),
                 )
-                await asyncio.sleep(15)
-                await app.delete_messages(chat_id, run2.id)
+            await asyncio.sleep(15)
+            await app.delete_messages(chat_id, run2.id)
         else:
             if not forceplay:
                 db[chat_id] = []
@@ -336,11 +334,13 @@ async def stream(
             )
             position = len(db.get(chat_id)) - 1
             button = aq_markup(_, chat_id)
-            await app.send_message(
+            ds1 = await app.send_message(
                 chat_id=original_chat_id,
                 text=_["queue_4"].format(position, title[:27], duration_min, user_name),
                 reply_markup=InlineKeyboardMarkup(button),
             )
+            await asyncio.sleep(15)
+            await app.delete_messages(chat_id, ds1.id)
         else:
             if not forceplay:
                 db[chat_id] = []
@@ -381,6 +381,8 @@ async def stream(
             )
             db[chat_id][0]["mystic"] = run
             db[chat_id][0]["markup"] = "tg"
+            await asyncio.sleep(15)
+            await app.delete_messages(chat_id, run.id)
     elif streamtype == "index":
         link = result
         title = "ɪɴᴅᴇx ᴏʀ ᴍ3ᴜ8 ʟɪɴᴋ"
