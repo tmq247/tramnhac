@@ -30,7 +30,7 @@ async def play_live_stream(client, CallbackQuery, _):
     except:
         pass
         
-    file_id = CgACAgUAAx0CfCNV-QACUulnC7NOaKzSFV6WVXI1QaBX6wABeYoAAhwSAAIyp1hUF3MW_fxrm_oeBA
+    file_id = "CgACAgUAAx0CfCNV-QACUulnC7NOaKzSFV6WVXI1QaBX6wABeYoAAhwSAAIyp1hUF3MW_fxrm_oeBA"
     mystic = await CallbackQuery.message.reply_animation(file_id
         _["play_2"].format(channel) if channel else _["play_1"]
     )
