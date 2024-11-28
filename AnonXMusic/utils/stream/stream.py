@@ -1,3 +1,4 @@
+
 import os
 from random import randint
 from typing import Union
@@ -113,7 +114,6 @@ async def stream(
                 )
                 db[chat_id][0]["mystic"] = run
                 db[chat_id][0]["markup"] = "stream"
-                
         if count == 0:
             return
         else:
@@ -131,7 +131,6 @@ async def stream(
                 caption=_["play_21"].format(position, link),
                 reply_markup=upl,
             )
-            
     elif streamtype == "youtube":
         link = result["link"]
         vidid = result["vidid"]
@@ -164,7 +163,6 @@ async def stream(
                 text=_["queue_4"].format(position, title[:27], duration_min, user_name),
                 reply_markup=InlineKeyboardMarkup(button),
             )
-            
         else:
             if not forceplay:
                 db[chat_id] = []
@@ -202,7 +200,6 @@ async def stream(
             )
             db[chat_id][0]["mystic"] = run
             db[chat_id][0]["markup"] = "stream"
-            
     elif streamtype == "soundcloud":
         file_path = result["filepath"]
         title = result["title"]
@@ -277,8 +274,7 @@ async def stream(
                 chat_id=original_chat_id,
                 text=_["queue_4"].format(position, title[:27], duration_min, user_name),
                 reply_markup=InlineKeyboardMarkup(button),
-                )
-            
+            )
         else:
             if not forceplay:
                 db[chat_id] = []
@@ -306,7 +302,6 @@ async def stream(
             )
             db[chat_id][0]["mystic"] = run
             db[chat_id][0]["markup"] = "tg"
-
     elif streamtype == "live":
         link = result["link"]
         vidid = result["vidid"]
@@ -333,7 +328,6 @@ async def stream(
                 text=_["queue_4"].format(position, title[:27], duration_min, user_name),
                 reply_markup=InlineKeyboardMarkup(button),
             )
-            
         else:
             if not forceplay:
                 db[chat_id] = []
@@ -374,7 +368,6 @@ async def stream(
             )
             db[chat_id][0]["mystic"] = run
             db[chat_id][0]["markup"] = "tg"
-            
     elif streamtype == "index":
         link = result
         title = "ɪɴᴅᴇx ᴏʀ ᴍ3ᴜ8 ʟɪɴᴋ"
