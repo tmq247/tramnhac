@@ -1,3 +1,4 @@
+
 import random
 import string
 
@@ -53,8 +54,9 @@ async def play_commnd(
     url,
     fplay,
 ):
-    file_id = "AnonXMusic/plugins/play/1729085419220.mp4"
-    mystic = await message.reply_animation(animation=file_id, caption=_["play_2"].format(channel) if channel else _["play_1"], )
+    mystic = await message.reply_text(
+        _["play_2"].format(channel) if channel else _["play_1"]
+    )
     plist_id = None
     slider = None
     plist_type = None
