@@ -174,8 +174,8 @@ queue_6 : "<b>🕚 Thời lượng:</b>Không xác định thời lượng phát
 queue_7 : "\nNhấp vào nút bên dưới để xem danh sách chờ đầy đủ."
 queue_8 : "<b>Người chơi {0}</b>\n\n🎄 <b>Hiện đang phát trực tuyến cho :</b> {1}\n\n🔗 <b>Loại luồng:</b> {2}\n🥀 < b >Yêu cầu bởi:</b> {3}\n{4}"
 
-stream_1 : "➲ <b>Bắt đầu phát sóng |</b>\n\n<b>‣ Tiêu đề:</b> <a href={0}>{1}</a>\n<b>‣ Thời lượng:</b > {2} phút\n<b>‣ Người yêu cầu:</b> {3}"
-stream_2 : "➲ <b>Bắt đầu phát sóng |</b>\n\n<b>‣ Loại phát sóng:</b> Trực tiếp [link]\n<b>‣ Người yêu cầu:</b> {0}"
+stream_1 : "➲ <b>Sᴛᴀʀᴛᴇᴅ Sᴛʀᴇᴀᴍɪɴɢ |</b>\n\n<b>‣ Tɪᴛʟᴇ :</b> <a href={0}>{1}</a>\n<b>‣ Dᴜʀᴀᴛɪᴏɴ :</b> {2} ᴍɪɴᴜᴛᴇs\n<b>‣ Rᴇǫᴜᴇsᴛᴇᴅ ʙʏ :</b> {3}"
+stream_2 : "➲ <b>Sᴛᴀʀᴛᴇᴅ Sᴛʀᴇᴀᴍɪɴɢ |</b>\n\n<b>‣ Sᴛʀᴇᴀᴍ ᴛʏᴘᴇ :</b> ʟɪᴠᴇ sᴛʀᴇᴀᴍ [ᴜʀʟ]\n<b>‣ Rᴇǫᴜᴇsᴛᴇᴅ ʙʏ :</b> {0}"
 
 CLOSE_BUTTON : "Đóng"
 BACK_BUTTON : "Quay lại"
